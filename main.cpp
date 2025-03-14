@@ -2,7 +2,8 @@
 #include "Human.h"
 #include "Computer.h"
 #include "Referee.h"
-
+ 
+using namespace std;
 int main() {
     Player * human = new Human();
     Player * computer = new Computer(); 

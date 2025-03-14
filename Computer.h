@@ -4,7 +4,9 @@
 
 class Computer : public Player {
     public: 
-        char makeMove();
-        string getName();
+        Computer();
+        Computer(std::string name);
+        Move * makeMove() override;
+        std::string getName() override;
 };
 #endif 

@@ -2,16 +2,28 @@
 #define PLAYER_H
 #include <string>
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include "Move.h"
+#include "Rock.h"
+#include "Scissors.h"
+#include "Paper.h"
+#include "Monkey.h"
+#include "Pirate.h"
+#include "Robot.h"
+#include "Ninja.h"
+#include "Zombie.h"
 
-using namespace std; 
 
 class Player {
     protected: 
-        string name; 
+        std::string name; 
+        Move * move; 
     public: 
-        Player(string name);
+        Player(std::string name);
         Player();
-        virtual char makeMove() = 0;
-        virtual string getName() = 0;
+        virtual Move * makeMove() = 0;
+        virtual std::string getName() = 0;
+        virtual ~Player() = default;
 };
 #endif   
