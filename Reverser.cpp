@@ -6,12 +6,12 @@ int Reverser::reverseDigit(int value) {
         return value;
     } else {
         int digit = value % 10; 
+        value /=10;
         int ex = value;
         while (ex > 0) {
             digit *=10;
             ex /=10;
         }
-        value /=10;
         return digit+reverseDigit(value);
     }
 }
