@@ -12,7 +12,7 @@
             result[0] = count;
         }
         while (count != string::npos) {
-            for(int i = 1; i< s2.size(); i++) {
+            for(int i = 1; i < s2.size(); i++) {
                 if (s2[i] == s1[i+count]) {
                     if (result[i] != -1) {
                         result[i] = count;
