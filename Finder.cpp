@@ -30,7 +30,6 @@
                         result[j] = i;
                     }
                 } else {
-                    i = i+j-1;
                     break;
                 }
             }
