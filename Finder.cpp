@@ -19,7 +19,7 @@
         //     }
         // }
         int size1 = s1.size();
-        int size2 = s2.size()
+        int size2 = s2.size();
         for (int i = 0; i < size2; i++) {
             result.push_back(-1);
         }
