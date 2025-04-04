@@ -18,16 +18,19 @@
         //         return result;
         //     }
         // }
-        for (int i = 0; i < s2.size(); i++) {
+        int size1 = s1.size();
+        int size2 = s2.size()
+        for (int i = 0; i < size2; i++) {
             result.push_back(-1);
         }
-        for (int i = 0; i < s1.size(); i++) {
-            for (int j = 0; j < s2.size(); j++) {
+        for (int i = 0; i < size1; i++) {
+            for (int j = 0; j < size2; j++) {
                 if(s2[j] == s1[i+j]) {
                     if (result[j] == -1) {
                         result[j] = i;
                     }
                 } else {
+                    i = i+j-1;
                     break;
                 }
             }
