@@ -2,6 +2,7 @@
 #define LINKEDLIST_H
 #include <iostream>
 #include "Node.h"
+#include <limits> 
 
 class LinkedList {
     private: 
