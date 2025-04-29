@@ -6,7 +6,7 @@ LinkedList::LinkedList() {
 LinkedList::LinkedList(int* array, int len) {
     head = nullptr; 
     for (int i = 0; i < len; i++) {
-        insertPosition(i,array[i]);
+        insertPosition(i+1,array[i]);
     }
 }
 LinkedList::~LinkedList() {
@@ -19,7 +19,7 @@ LinkedList::~LinkedList() {
 }
 void LinkedList::insertPosition(int pos, int newNum) {
     Node * newNode = new Node(newNum);
-    if (pos == 0) {
+    if (pos <=1) {
         newNode->setNext(head);
         head = newNode;
         return;
@@ -96,9 +96,16 @@ int LinkedList::search(int target) {
 }
 void LinkedList::printList() {
     Node * current = head;
+    if (current == nullptr) {
+        std::cout<<std::endl;
+        return;
+    }
     std::cout<<"[";
+    std::cout << current->getData();
+    current = current->next();
     while (current != nullptr) {
-        std::cout << current->getData() << " ";
+        std::cout<<" ";
+        std::cout << current->getData();
         current = current->next();
     }
     std::cout << "]" << std::endl;
