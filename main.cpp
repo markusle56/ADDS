@@ -3,6 +3,7 @@
 #include <sstream>
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
+#include "MergeSort.h"
 
 int main() {
     std::string inputLine;
@@ -15,7 +16,7 @@ int main() {
         nums.push_back(value);
     }
     // std::vector<int> nums = {1, 3, 5, 4, -5, 100, 7777, 2014, 0};
-    QuickSort qs;
+    MergeSort qs;
     std::vector<int> sortedList = qs.sort(nums);
     RecursiveBinarySearch rbs;
     bool found = rbs.search(sortedList, 1);
