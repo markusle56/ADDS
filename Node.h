@@ -11,5 +11,6 @@ class Node {
         Node * next();
         int getData();
         void setNext(Node * next);
+        void setData(int val);
 };
  #endif

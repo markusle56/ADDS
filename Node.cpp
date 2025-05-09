@@ -11,3 +11,7 @@ void Node::setNext(Node * next) {
     link = next;
     return;
 }
+
+void Node::setData(int val) {
+    data = val;
+}
