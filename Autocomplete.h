@@ -12,7 +12,7 @@ struct TrieNode {
 
 class Autocomplete {
     private:
-        TrieNode * trie; 
+        TrieNode * root; 
     public: 
         Autocomplete();
         vector<string> getSuggestions(string partialWord);  // return the known words that start with partialWord
