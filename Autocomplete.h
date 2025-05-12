@@ -4,15 +4,17 @@
 #include <string> 
 
 using namespace std; 
-
 struct TrieNode {
-    bool isEndOfWord; 
+    bool isEndOfWord;
     vector<TrieNode*> children;
+    TrieNode() : children(26, nullptr), isEndOfWord(false) {}
 };
 
-class Autocomplete { 
-    TrieNode * trie; 
+class Autocomplete {
+    private:
+        TrieNode * trie; 
     public: 
+        Autocomplete();
         vector<string> getSuggestions(string partialWord);  // return the known words that start with partialWord
 
         void insert(string word); // add a word to the known words
