@@ -158,8 +158,8 @@ class Heap {
             heapIndex index = this->tree.size() - 1;
             while(index > 1) {
                 heapIndex parent = getParentPosition(index);
-                if (this->tree[parent] > this->trea[index]) {
-                    T temp = this->heap[parent];
+                if (this->tree[parent] > this->tree[index]) {
+                    T temp = this->tree[parent];
                     this->tree[parent] = this->tree[index];
                     this->tree[index] = temp;
                     index = parent;
@@ -175,7 +175,7 @@ class Heap {
         // Remove an element from the heap
         void remove(T value) {
             heapIndex index = 0;
-            for(int i = 0; i < this->tree.size(); i ++) {
+            for(auto i = 0; i < this->tree.size(); i ++) {
                 if (this->tree[i] == value) {
                     index = i;
                     break;
