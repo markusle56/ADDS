@@ -159,7 +159,9 @@ class Heap {
             while(index > 1) {
                 heapIndex parent = getParentPosition(index);
                 if (this->tree[parent] > this->tree[index]) {
-                    std::swap(this->tree.at([parent]), this->tree.at(index))
+                    T temp = this->tree[parent];
+                    this->tree[parent] = this->tree[index];
+                    this->tree[index] = temp;
                     index = parent;
                 } else {
                     break;
