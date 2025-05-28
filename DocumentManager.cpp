@@ -4,7 +4,7 @@ DocumentManager::DocumentManager() {}
 
 void DocumentManager::addDocument(string name, int id, int license_limit) {
     Document doc(name, license_limit);
-    documents.emplace(id, doc);
+    documents.insert({id, doc});
     return;
 }
 
@@ -14,21 +14,25 @@ void DocumentManager::addPatron(int patronID) {
 
 int DocumentManager::search(string name) {
     for (auto doc : documents) {
-        if (doc.second.getName() == name) {
+        if (doc.second.name == name) {
             return doc.first;
         }
     }
     return 0;
 }
 bool DocumentManager::borrowDocument(int docid, int patronID) {
-    if (documents.find(docid) != documents.end() && documents[docid].borrowDocument()) {
-        return true;
+    auto it = documents.find(docid);
+    if (it != documents.end()) {
+        if (it->second.borrowDocument()) {
+            return true;
+        }
     }
     return false;
 }
 void DocumentManager::returnDocument(int docid, int patronID) {
-    if (documents.find(docid) != documents.end()) {
-        documents[docid].returnDocument();
+    auto it = documents.find(docid);
+    if (it != documents.end()) {
+        it->second.returnDocument();
     }
     return;
 }

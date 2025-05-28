@@ -2,6 +2,10 @@
 
 
 Document::Document(string name, int license_limit): name(name), license_limit(license_limit) {}
+
+Document::Document(): Document("", 0) {}
+
+
 string Document::getName() {
     return name;
 }
@@ -20,3 +24,4 @@ void Document::returnDocument() {
     license_limit++;
     return;
 }
+
